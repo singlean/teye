@@ -25,7 +25,7 @@ REDIS_URL = "redis://127.0.0.1:6379"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'teye (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1'
 
 # pc身份标示列表
 USER_AGENT_LIST = ["Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0",
@@ -84,7 +84,9 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 # 管道
 ITEM_PIPELINES = {
-   'teye.pipelines.TeyePipeline': 300,
+    'teye.pipelines.TYCPipeline': 300,
+    'teye.pipelines.DPingPipeline': 301,
+
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

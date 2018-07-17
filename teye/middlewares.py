@@ -8,7 +8,7 @@ import random
 class RandomUserAgent(object):
 
     def process_request(self, request, spider):
-
-        UA = random.choice(USER_AGENT_LIST)
-        request.headers["User-Agent"] = UA
+        if spider.name != "ksba":
+            UA = random.choice(USER_AGENT_LIST)
+            request.headers["User-Agent"] = UA
 
